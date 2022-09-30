@@ -1,26 +1,27 @@
 from tkinter import Canvas, Label, StringVar, OptionMenu, Tk
 
-class firstGUI:
+
+class FirstGUI:
     def __init__(self):
         self.master = None
-        self.choosePlayer_label = None
+        self.choose_player_label = None
         self.choice = None
         self.variable = None
-        self.choosePlayer_menu = None
+        self.choose_player_menu = None
         self.canvas = None
 
-    def createFirstGUI(self):
-        self.choosePlayer_label = Label(self.master, text='Choose how many players are going to play!',
-                                        font="Times 20 italic bold")
-        self.choosePlayer_label.pack(pady=10, padx=0)
+    def create_first_GUI(self):
+        self.choose_player_label = Label(self.master, text='Choose how many players are going to play!',
+                                         font="Times 20 italic bold")
+        self.choose_player_label.pack(pady=10, padx=0)
         self.variable = StringVar(self.master)
         self.variable.set('Choose')
-        self.variable.trace('w', self.choosePlayer)
+        self.variable.trace('w', self.choose_player)
         self.choice = ['2', '3', '4', '5']
-        self.choosePlayer_menu = OptionMenu(self.master, self.variable, *self.choice)
-        self.choosePlayer_menu.pack(pady=10, padx=0)
+        self.choose_player_menu = OptionMenu(self.master, self.variable, *self.choice)
+        self.choose_player_menu.pack(pady=10, padx=0)
 
-    def choosePlayer(self, *args):
+    def choose_player(self, *args):
         if self.variable.get() == '2':
             self.canvas = Canvas(width='1024', height='600')
             self.canvas.pack()
@@ -37,6 +38,7 @@ class firstGUI:
 
             for i in range(17):
                 self.canvas.create_rectangle(x1, y1, x2, y2, fill='red')
+
                 x1 += 58
                 x2 += 58
 
@@ -52,16 +54,18 @@ class firstGUI:
 
             for i in range(16):
                 self.canvas.create_rectangle(x1, y1, x2, y2, fill='red')
+                
                 x1 += 58
                 x2 += 58
 
 
-master = Tk()
+if __name__ == "__main__":
+    master = Tk()
 
-master.title('OldMaid')
-master.geometry('1024x600')
+    master.title('OldMaid')
+    # master.geometry('1024x600')
 
-firstGui = firstGUI()
-firstGui.createFirstGUI()
+    first_GUI = FirstGUI()
+    first_GUI.create_first_GUI()
 
-master.mainloop()
+    master.mainloop()
