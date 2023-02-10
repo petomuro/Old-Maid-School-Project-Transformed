@@ -1,8 +1,7 @@
-# Old-Maid-Transformed
+# Old-Maid-School-Project-Transformed
 
-Simple Old Maid Console Game - This is just transformed game to Python language from C++. There is the GUI version of
-game too, but unfinished yet. It's working just for 2 players.
+Simple Old Maid School Project created in Python.
 
 ## Project Setup
 
-Just configure python interpreter and run OldMaidWithGui.py or OldMaidWithoutGui.py
+Just configure python interpreter and run main.py
